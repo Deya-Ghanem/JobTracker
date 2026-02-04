@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-ug4e7v!sd*348hirj_q52(hvdoxddqtzf)erx_07(j3onkfqj*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://jobtracker-fub9.onrender.com"]
+ALLOWED_HOSTS = [
+    "jobtracker-fub9.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -86,9 +90,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 import dj_database_url
 import os
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE.URL')
+        default=os.environ.get('DATABASE_URL')
     )
 }
 
@@ -146,10 +151,10 @@ SIMPLE_JWT = {
 from corsheaders.defaults import default_headers
 
 CORS_ALLOWED_ORIGINS = [
-    "https://jobttrackertest.netlify.app/",
     "http://localhost:5173",
-
+    "https://jobttrackertest.netlify.app",
 ]
+
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
     "authorization",
@@ -159,6 +164,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    "https://jobttrackertest.netlify.app",
 ]
+
 
