@@ -84,15 +84,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+import dj_database_url
+import os
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'JobTracker',
-        'HOST': 'localhost',
-        'PORT':'',
-        'USER':'root',
-        'PASSWORD':'dieagh7778'
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE.URL')
+    )
 }
 
 
@@ -149,9 +146,9 @@ SIMPLE_JWT = {
 from corsheaders.defaults import default_headers
 
 CORS_ALLOWED_ORIGINS = [
+    "https://jobttrackertest.netlify.app/",
     "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://jobttrackertest.netlify.app/"
+
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
