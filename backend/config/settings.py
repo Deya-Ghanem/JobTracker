@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ug4e7v!sd*348hirj_q52(hvdoxddqtzf)erx_07(j3onkfqj*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://jobtracker-fub9.onrender.com"]
 
 
 # Application definition
