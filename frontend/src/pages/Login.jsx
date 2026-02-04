@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react"
 import AuthContext from "../context/AuthContext"
 import { useNavigate } from "react-router-dom"
-import "./login.css"
+import "./Login.css"
 function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
